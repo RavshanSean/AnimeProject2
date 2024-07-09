@@ -8,6 +8,14 @@ router.get("/", async (req, res) => {
     res.render("users/index.ejs", { users: allUsers });
   });
 
+  //playlist added
+router.get('/vip-lounge', async (req, res) => {
+    const allUsers = await User.find();
+    console.log(allUsers);
+    res.render('users/playlist.ejs', { users: allUsers});
+});
+  //
+
   router.get("/:userId", async (req, res) => {
     const foundUser = await User.findById(req.params.userId);
     res.render("users/show.ejs", { users: foundUser });// Change 'users' to 'user'

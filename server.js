@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
+const path = require("path");//css style
 const session = require('express-session');
 
 const usersController = require('./controllers/users.js');
@@ -26,7 +27,7 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-
+app.use(express.static(path.join(__dirname, "public"))); //css style here
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -41,21 +42,26 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/vip-lounge', (req, res) => {
+/*app.get('/vip-lounge', (req, res) => {
   if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
+    //
+    res.send('playlist.ejs', {
+      user: req.session.user,
+    })
+    //res.send(`Welcome to the party ${req.session.user.username}.`);
   } else {
     res.send('Sorry, no playlist added.');
   }
-});
+});*/
+
 app.use(passUserToView);
 app.use('/auth', authController);
 app.use(isSignedIn);
-
+app.use('/', usersController);
 app.use('/users/:userId/animes',animesController);
 
 
-app.use('/users', usersController);
+//app.use('/users', usersController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
