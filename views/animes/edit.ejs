@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing <%= anime.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit <%= anime.title %> at <%= anime.company %></h1>
+  <form 
+    action="/users/<%= user._id %>/animes/<%= anime._id %>?_method=PUT"
+    method="POST"
+  >
+    <label for="name">name:</label>
+    <input 
+      type="text" 
+      name="name" 
+      id="name" 
+      value="<%= anime.name %>"
+    >
+    <label for="watchTime">Time:</label>
+    <input type="text" name="watchTime" id="watchTime" value="<%= anime.watchTime %>">
+    <label for="descriptions">Descriptions:</label>
+    <textarea name="descriptions" id="descriptions" value="<%= anime.descriptions %>"></textarea>
+    <button type="submit">Update anime</button>
+  </form>
+</body>
+</html>

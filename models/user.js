@@ -1,4 +1,20 @@
 const mongoose = require('mongoose');
+const animeSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  descriptions: {
+    type: String,
+
+  },
+  watchTime: {
+    type: String,
+    
+  }
+})
+
+
 
 const userSchema = mongoose.Schema({
   username: {
@@ -9,6 +25,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  list: [animeSchema]
 });
 
 const User = mongoose.model('User', userSchema);

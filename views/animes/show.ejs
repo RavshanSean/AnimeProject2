@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= anime.name %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= anime.name %></h1>
+  <p>Name: <%=anime.name %></p>
+  <p>time: <%=anime.watchTime %></p>
+  <p>descriptions: <%=anime.descriptions %></p>
+ 
+  <a href="/users/<%= user._id %>/animes/<%= anime._id %>/edit">
+    Edit this anime
+  </a>
+
+  <form
+  action="/users/<%= user._id %>/animes/<%= anime._id %>?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">Delete this anime</button>
+</form>
+</body>
+</html>

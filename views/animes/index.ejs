@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Welcome to my List</h1>
+    <a href="/users/<%=user._id%>/animes/new/">Add New Anime</a>
+    <ul>
+        <% animes.forEach((anime)=> { %>
+          <li>
+            <a href="/users/<%= user._id %>/animes/<%= anime._id %>">
+              <%= anime.name %> 
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+  </body>
+</html>
