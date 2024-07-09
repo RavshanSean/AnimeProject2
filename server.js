@@ -36,7 +36,7 @@ app.use(
   })
 );
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
   });
