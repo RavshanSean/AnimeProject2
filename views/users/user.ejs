@@ -7,23 +7,21 @@
   <title>Users</title>
 </head>
 <body>
-    
-    <%- include('../partials/_navbar.ejs') %>
-    <button>
-      <a href="/auth/sign-out">Sign out</a>
-    </button>
-    <form action="/vip-lounge" method="GET">
-      <button class="btn">Get into the playlist!</button>
-    </form>
 
-    <div class="wrapper">
+    <div class="bta">
+        <h1> <span>Click on Each Number for More Info!</span> </h1>
+               </div>
+
+    <div class="wrapper">    
         <div class="container">
             <input type="radio" name="slide" id="c1">
             <label for="c1" class="card">
                 <div class="row">
                     <div class="icon">1</div>
                     <div class="description">
-                        <h4>Top List Anime</h4>
+                        <div class="links">
+                            <%- include('../partials/_navbar.ejs') %>
+                        </div>
                         
                     </div>
                 </div>
@@ -34,9 +32,9 @@
                 <div class="row">
                     <div class="icon">2</div>
                     <div class="description">
-                    
-                        <h4>Top Characters</h4>
-                        
+                       <a href="/news">
+                        <h4>Anime News</h4>
+                       </a>
                     </div>
                 </div>
             </label>
@@ -46,7 +44,9 @@
                 <div class="row">
                     <div class="icon">3</div>
                     <div class="description">
-                        <h4>Top Antogonists</h4>
+                        <h4> <form action="/vip-lounge" method="GET">
+                            <button class="btn">Get into the playlist!</button>
+                          </form></h4>
                         
                     </div>
                 </div>
@@ -57,7 +57,9 @@
                 <div class="row">
                     <div class="icon">4</div>
                     <div class="description">
-                        <h4>Anime News</h4>
+                        <h4> <button>
+                            <a href="/auth/sign-out">Sign out</a>
+                          </button></h4>
                         
                     </div>
                 </div>

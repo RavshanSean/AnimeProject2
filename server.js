@@ -51,7 +51,21 @@ app.get('/userhome', async (req, res) => {
         user: currentUser,
     });
 });
-//
+
+
+app.get('/news', async (req, res) => {
+  const currentUser = await User.findById(req.session.user._id);
+    res.render('./users/animenews.ejs',{
+        user: currentUser,
+    });
+});
+
+
+//try out
+
+
+
+
 
 /*app.get('/vip-lounge', (req, res) => {
   if (req.session.user) {

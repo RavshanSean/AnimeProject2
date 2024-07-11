@@ -3,21 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/mylist.css" />
     <title>My List</title>
   </head>
   <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Welcome to my List</h1>
-    <a href="/users/<%=user._id%>/animes/new/">Add New Anime</a>
-    <ul>
-        <% animes.forEach((anime)=> { %>
-          <li>
-            <a href="/users/<%= user._id %>/animes/<%= anime._id %>">
-              <%= anime.name %> 
-            </a>
-          </li>
-        <% }) %>
-      </ul>
+   
+    <div class="banner">
+      <div class="slider" style="--quantity: 10">
+
+        <div class="item" style="--position: 1"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 2"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 3"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 4"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 5"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 6"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 7"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 8"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 9"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        <div class="item" style="--position: 10"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+
+      </div>
+    </div>
+      
   </body>
 </html>
+
+
+
+
+
+
