@@ -66,10 +66,10 @@ router.post('/sign-in', async (req, res) => {
       _id: userInDatabase._id
     };
   
-    res.redirect('/home');//change
+    res.redirect('/userhome');//change
   } catch (error) {
     console.log(error);
-    res.redirect('/home');//changed from "/" to '/home'
+    res.redirect('/userhome');//changed from "/" to '/home'
   }
 });
 

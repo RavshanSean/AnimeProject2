@@ -37,6 +37,7 @@ router.post('/', async (req, res) => {
     }
 });
 
+
 router.get('/:animeId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);

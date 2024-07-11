@@ -8,9 +8,7 @@
   <title>Home Page</title>
 </head>
 <body>
-  <div class="container">
-    <div class="bubbles">
-
+  <div class="bubbles">
     <span style="--i:11;"></span>
     <span style="--i:12;"></span>
     <span style="--i:24;"></span>
@@ -30,25 +28,61 @@
     <span style="--i:26;"></span>
     <span style="--i:17;"></span>
     <span style="--i:13;"></span>
-    
-    
-   </div>
-  <% if (user) { %>
-    <%- include('./partials/_navbar.ejs') %>
-   
-  <h1>Welcome to PinkOcean</h1>
-    <p>
-      <a href="/auth/sign-out">Sign out</a>
-    </p>
-  <% } else { %>
-    <h1>Welcome to PinkOcean.</h1>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
-  <p><a href="/vip-lounge">Get into the playlist!</a></p>
+    <span style="--i:22;"></span>
+    <span style="--i:25;"></span>
+    <span style="--i:18;"></span>
+    <span style="--i:21;"></span>
+    <span style="--i:15;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:26;"></span>
+    <span style="--i:17;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:11;"></span>
+    <span style="--i:12;"></span>
+    <span style="--i:24;"></span>
+    <span style="--i:10;"></span>
+    <span style="--i:14;"></span>
+    <span style="--i:23;"></span>
 
-</div>
+    <span style="--i:11;"></span>
+    <span style="--i:12;"></span>
+    <span style="--i:24;"></span>
+    <span style="--i:10;"></span>
+    <span style="--i:14;"></span>
+    <span style="--i:23;"></span>
+    </div>
+  <div class="container">
+    <div class="wrapper">
+      <% if (user) { %>
+       
+      
+       <h1>Welcome to Anime world</h1>
+        <%- include('./partials/_navbar.ejs') %>
+          <button>
+            <a href="/auth/sign-out">Sign out</a>
+          </button>
+          
+      <% } else { %>
+        
+          <h1>Welcome to Anime Community</h1>
+          <div class="first">
+            <form  action="/auth/sign-up" method="GET">
+              <button class="btn">Sign up</button>
+            </form>
+          </div>
+            <div class="first">
+              <form action="/auth/sign-in" method="GET">
+                <button class="btn">Sign in</button>
+              </form>
+            </div>
+        
+      <% } %>
+        <div class="first">
+          <form action="/vip-lounge" method="GET">
+            <button class="btn">Get into the playlist!</button>
+          </form>
+       </div> 
+    </div>
+  </div>
 </body>
 </html>

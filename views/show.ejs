@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Users List - Community</title>
 </head>
 <body>
-    <a href="/home">Home</a>
   <% include('../partials/_navbar.ejs') %>
   <h1>Community Page</h1>
   <ul>
-    <% users.forEach(user => { %>
+    <% users.list.forEach(user => { %>
       <li>
-        <a href="/<%= user._id %>"><%= user.username %></a>
-        <a href="/<%= user._id %>"><%= user.list.name %></a> 
+        <p><%= user.name %></p>
+        <p ><%= user.descriptions %></p> 
+        <p ><%= user.watchTime %></p> 
       </li>
     <% }); %>
   </ul>

@@ -28,6 +28,7 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, "public"))); //css style here
+app.use(morgan('dev'));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -41,6 +42,16 @@ app.get('/home', (req, res) => {
     user: req.session.user,
   });
 });
+
+//ryan helping me log in new ejs 
+
+app.get('/userhome', async (req, res) => {
+  const currentUser = await User.findById(req.session.user._id);
+    res.render('./users/user.ejs',{
+        user: currentUser,
+    });
+});
+//
 
 /*app.get('/vip-lounge', (req, res) => {
   if (req.session.user) {
