@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/edit.css" />
   <title>Editing <%= anime.title %></title>
-</head>
-<body>
-  <%- include('../partials/_navbar.ejs') %>
+     </head>
+       <body>
+
+  <div class="box">
   <h1>Edit <%= anime.title %> at <%= anime.company %></h1>
-  <form 
-    action="/users/<%= user._id %>/animes/<%= anime._id %>?_method=PUT"
-    method="POST"
-  >
-    <label for="name">name:</label>
+  <form action="/users/<%= user._id %>/animes/<%= anime._id %>?_method=PUT" method="POST">
+
+    <div class="inputBox">
     <input 
-      type="text" 
-      name="name" 
-      id="name" 
-      value="<%= anime.name %>"
-    >
-    <label for="watchTime">Time:</label>
-    <input type="text" name="watchTime" id="watchTime" value="<%= anime.watchTime %>">
-    <label for="descriptions">Descriptions:</label>
-    <textarea name="descriptions" id="descriptions" value="<%= anime.descriptions %>"></textarea>
-    <button type="submit">Update anime</button>
+      type="text" name="name" id="name" value="<%= anime.name %>" required="required" >
+     <span>Name</span>
+     <i></i>
+     </div>  
+
+   <div class="inputBox">
+   <input type="text" name="description" id="description" required="required" value="<%= anime.description %>">
+   <span>Description</span>
+   <i></i>
+   </div> 
+     
+    <a href="<%- include('../partials/_navbar.ejs') %>"></a>
+    <input type="submit" value="update">
   </form>
+  </div>
 </body>
 </html>

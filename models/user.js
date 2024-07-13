@@ -11,6 +11,11 @@ const animeSchema = new mongoose.Schema({
   watchTime: {
     type: String,
     
+  },
+
+  addImg: {
+type: String,
+
   }
 })
 

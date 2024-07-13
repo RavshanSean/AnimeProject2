@@ -5,28 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/mylist.css" />
     <title>My List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
   </head>
   <body>
-   
-    <div class="banner">
-      <div class="slider" style="--quantity: 10">
+       <div class="container">
+         <div class="navbar">
+        
+          <nav>
+            <ul>
+              <li>
+                <%- include('../partials/_navbar.ejs') %>
+              </li>
+            </ul>
+          </nav>
 
-        <div class="item" style="--position: 1"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 2"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 3"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 4"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 5"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 6"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 7"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 8"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 9"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
-        <div class="item" style="--position: 10"><img src="https://storage.googleapis.com/pai-images/2caf2958f0f94b6d9e203efa8baf4a78.jpeg" alt=""></div>
+        
+         </div>
 
-      </div>
-    </div>
-      
+         <div class="row">
+          <div class="col">
+            <h1>My List</h1>
+            <p>Feal Free To Add Edit or Delete List. we will update soon!</p>
+              
+            <button type="button"> <a href="/users/<%=user._id%>/animes/new/">Add New</a></button>
+          </div>
+          <div class="col">
+
+           
+            <% animes.forEach((anime)=> { %>
+              <div class="card">
+                <a href="/users/<%= user._id %>/animes/<%= anime._id %>">
+                  <%= anime.name %> 
+                  <img class="images" src="<%= anime.addImg %>">
+                </a>
+              </div>
+            <% }) %>
+          </div>
+         </div>
+       </div>
   </body>
 </html>
+
 
 
 

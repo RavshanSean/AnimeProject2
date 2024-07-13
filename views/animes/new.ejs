@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/addnew.css" />
     <title>Document</title>
 </head>
 <body>
-    <!--add new anime-->
-    <% include('../partials/_navbar.ejs') %>
+  
+    <div class="box">
     <form action="/users/<%= user._id%>/animes" method="POST">
-        <label for="name">name:</label>
-        <input type="text" name="name" id="name">
-        <button type="submit">Add Anime</button>
+        <h1>Add a New Anime List</h1>
+        <div class="inputBox">
+        
+
+        <div class="inputBox">   
+        <input type="text" name="name" id="name" required="required">
+        <span>Name</span>
+        <i></i>
+        </div>
+
+        <div class="inputBox">
+        <input type="text" name="description" id="description" required="required">
+        <span>Description</span>
+        <i></i>
+        </div> 
+
+
+        <div class="inputBox">
+        <input type="text" name="addImg" id="addImg" required="required">
+        <span>URL</span>
+        <i></i>
+        </div>
+
+        <a href="<%- include('../partials/_navbar.ejs') %>"></a>
+        <input type="submit" value="Add Anime">
     </form>
+    </div>
 </body>
 </html>

@@ -3,25 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/show.css" />
   <title><%= anime.name %></title>
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
-  <h1><%= anime.name %></h1>
-  <p>Name: <%=anime.name %></p>
-  <p>time: <%=anime.watchTime %></p>
-  <p>descriptions: <%=anime.descriptions %></p>
- 
-  <a href="/users/<%= user._id %>/animes/<%= anime._id %>/edit">
-    Edit this anime
-  </a>
 
-  <form
-  action="/users/<%= user._id %>/animes/<%= anime._id %>?_method=DELETE"
-  method="POST"
->
-  <button type="submit">Delete this anime</button>
-</form>
+
+<div class="card">
+  <img src="/stylesheets/animebackground.jpeg" class="card-img" alt="">
+  <div class="card-body">
+    <h1 class="card-title"><%= anime.name %></h1>
+
+    <p class="card-info" class="card-sub-title">Name: <%=anime.name %></p>
+    <p class="card-info" class="card-sub-title">descriptions: <%=anime.descriptions %></p>
+    
+      
+
+    <button class="card-btn">
+    <a href="/users/<%= user._id %>/animes/<%= anime._id %>/edit">
+      Edit
+    </a></button>
+
+
+    <form
+     action="/users/<%= user._id %>/animes/<%= anime._id %>?_method=DELETE"method="POST">
+    <button class="card-btn" type="submit" title="submit">Delete</button>
+    </form>
+
+    <%- include('../partials/_navbar.ejs') %>
+
+  </div>
+</div>
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <body>
+  <%- include('../partials/_navbar.ejs') %>
+  
+ 
+  
+
+
+

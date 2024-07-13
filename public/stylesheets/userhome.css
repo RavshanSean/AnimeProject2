@@ -14,41 +14,30 @@ body {
 }
 
 h1 {
-    color: #192b47;
-    /*padding: 20vh;*/
+    color: #fff;
     position: relative;
     top:20vh;
     font-size: 3em;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3em;
+    filter: blur(1px);
+    font-weight: 100;
+    text-shadow: 0 0 10px rgba(17, 134, 172),
+                 0 0 20px rgba(17, 134, 172),
+                 0 0 40px rgba(17, 134, 172),
+                 0 0 80px rgba(17, 134, 172),
+                 0 0 160px rgba(17, 134, 172);
 
 }
+
 /*style my h1*/
 
-h1 span {
-    animation: animate 5s linear infinite;
-}
 
-h2 span:nth-child(event) {
-    animation-delay: 0.4s;
-}
-
-@keyframes animate {
-    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
-    {
-        color: #0e3742;
-        text-shadow: none;
-    }
-    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,100% 
-    {
-        color: #fff;
-        text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4
-        0 0 40px #03bcf4
-        0 0 80px #03bcf4
-        0 0 160px #03bcf4
-        0 0 400px #03bcf4;
-    }
-} 
 
 /**/
 
@@ -67,6 +56,7 @@ h2 span:nth-child(event) {
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
+    
 }
 
 .card {
@@ -127,21 +117,60 @@ h2 span:nth-child(event) {
 .links a {
     margin: 10px 0;
     font-size: 0.75em;
-    color: #8f8f8f;
     text-decoration: none;
     margin-top: 15px;
+    background: rgb(236, 1, 166);
+    color: white;
+    border-radius: 10%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 0 25px rgb(9, 214, 246);
+    
+    position: relative;
+    font-weight: 100;
+    text-shadow: 0 0 10px rgba(17, 134, 172),
+                 0 0 20px rgba(17, 134, 172),
+                 0 0 40px rgba(17, 134, 172),
+                 0 0 80px rgba(17, 134, 172),
+                 0 0 160px rgba(17, 134, 172);
 }
 /**/
 
 .description p {
-    color: #b0b0ba;
+    color: #e6e6f0;
     padding-top: 5px;
 
 }
 
-.description h4 {
-    text-transform: uppercase;
+a {
+    text-decoration: none;
+}
 
+.description h4 {
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    width: 250px;
+    padding: 10px;
+    font-size: 15px;
+    columns: #15f4ee;
+    font-weight: 400;
+    border: 5px solid #15f4ee;
+    background-color: #0c192c;
+    color: #15f4ee;
+    letter-spacing: 10px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+    text-shadow: 0 0 10px rgba(17, 134, 172),
+                 0 0 20px rgba(17, 134, 172),
+                 0 0 40px rgba(17, 134, 172),
+                 0 0 80px rgba(17, 134, 172),
+                 0 0 160px rgba(17, 134, 172);
 }
 
 input {
