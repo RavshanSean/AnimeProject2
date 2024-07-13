@@ -1,22 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/comunity-page.css" />
   <title>Users List - Community</title>
 </head>
 <body>
-    <a href="/home">Home</a>
-  <% include('../partials/_navbar.ejs') %>
-  <h1>Community Page</h1>
-  <ul>
-    <% users.forEach(user => { %>
+    <ul>
       <li>
-        <a href="/<%= user._id %>"><%= user.username %></a>
-        <a href="/<%= user._id %>"><%= user.list.name %></a> 
+        <span class="numer">1</span>
+        <span class="name">name</span>
+        <span class="points">100</span>
       </li>
-    <% }); %>
-  </ul>
+    </ul>
 </body>
 </html>
