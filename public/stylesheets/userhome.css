@@ -25,7 +25,7 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     font-size: 3em;
-    filter: blur(1px);
+    filter: blur(0.1px);
     font-weight: 100;
     text-shadow: 0 0 10px rgba(17, 134, 172),
                  0 0 20px rgba(17, 134, 172),
@@ -129,7 +129,6 @@ h1 {
     margin: 15px;
     text-align: center;
     box-shadow: 0 0 25px rgb(9, 214, 246);
-    
     position: relative;
     font-weight: 100;
     text-shadow: 0 0 10px rgba(17, 134, 172),
@@ -200,4 +199,23 @@ input:checked + label .description {
 
 .card[for="c4"] {
     background-image: url('https://image.cdn2.seaart.ai/2023-09-02/16032617754265605/c95fbe33fe6f7a8880d294c9a5131ff63cae9698_high.webp');
+}
+
+
+button {
+   
+    padding: 15px 20px;
+   border-radius: 100px;
+   color: #15f4ee;
+   font-weight: bold;
+   border: 5px solid #15f4ee;
+   background-color: #0c192c;
+   transition: 1.5s;
+    text-shadow: 0 0 10px rgba(17, 134, 172),
+                 0 0 20px rgba(17, 134, 172),
+                 0 0 40px rgba(17, 134, 172),
+                 0 0 80px rgba(17, 134, 172),
+                 0 0 160px rgba(17, 134, 172);
+
+              
 }
