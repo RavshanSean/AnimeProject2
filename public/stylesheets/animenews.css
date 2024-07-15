@@ -8,27 +8,30 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
+
+    
+    
 }
 
 .banner .slider {
     position: absolute;
     width: 200px;
     height: 250px;
-    top: 10%;
+    top: 18%;
     left: calc(50% - 100px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
     animation: autoRun 120s linear infinite;
+    z-index: 2;
 
-    
 }
 
 @keyframes autoRun {
     from {
-        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+        transform: perspective(2000px) rotateX(-16deg) rotateY(0deg);
     }
     to {
-        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+        transform: perspective(2000px) rotateX(-16deg) rotateY(360deg);
     }
 }
 
@@ -38,18 +41,22 @@ body {
     transform: 
     rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) 
     translateZ(550px);
+    box-shadow: 0 0 50px #0ef;
+    border-radius: 10%;
 }
 
 .banner .slider .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10%;
 }
 
 
 .links a {
-    color: #8f8f8f;
+    color: #ffffff;
     text-decoration: none;
+ 
 }
 
 
@@ -59,12 +66,30 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: min(1400px, 100vw);
+    width: min(1200px, 100vw);
     height: max-content;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    text-shadow: 0 0 10px rgba(17, 134, 172),
+    0 0 10px rgba(17, 134, 172),
+    0 0 10px rgba(17, 134, 172);
+    z-index: 3;
 }
 
+
+
+  .banner .content .model {
+    background-image: url(/stylesheets/file.png);
+    width: 100%;
+    height: 75vh;
+    top: 30%;
+    position: absolute;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+   
+}
 

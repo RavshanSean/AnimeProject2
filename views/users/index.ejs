@@ -8,12 +8,24 @@
   <title>Users List - Community</title>
 </head>
 <body>
-    <ul>
+  
+ 
+  <% include('../partials/_navbar.ejs') %>
+  <div class="box">
+    <h2>Community Page</h2>
+  <ul>
+    <% users.forEach(user => { %>
+      <% include('../partials/_navbar.ejs') %>
       <li>
-        <span class="numer">1</span>
-        <span class="name">name</span>
-        <span class="points">100</span>
+        <a href="/<%= user._id %>"><%= user.username %></a>
+        <a href="/<%= user._id %>"><%= user.list.name %></a> 
       </li>
-    </ul>
+      
+    <% }); %>
+  </ul>
+  <div class="btn">
+  <a href="/home">Home</a>
+</div>
+</div>  
 </body>
 </html>
