@@ -5,29 +5,24 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
-const path = require("path");//css style
+const path = require("path");
 const session = require('express-session');
-
 const usersController = require('./controllers/users.js');
-
 const authController = require('./controllers/auth.js');
 const animesController = require('./controllers/animes.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const User = require('./models/user.js');
-
-
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 mongoose.connect(process.env.MONGODB_URI);
-
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, "public"))); //css style here
+app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan('dev'));
 app.use(
   session({
@@ -43,11 +38,9 @@ app.get('/home', (req, res) => {
   });
 });
 
-//ryan helping me log in new ejs 
-
 app.get('/userhome', async (req, res) => {
   const currentUser = await User.findById(req.session.user._id);
-    res.render('./users/user.ejs',{
+    res.render('users/user.ejs',{
         user: currentUser,
     });
 });
@@ -55,38 +48,16 @@ app.get('/userhome', async (req, res) => {
 
 app.get('/news', async (req, res) => {
   const currentUser = await User.findById(req.session.user._id);
-    res.render('./users/animenews.ejs',{
+    res.render('users/animenews.ejs',{
         user: currentUser,
     });
 });
-
-
-//try out
-
-
-
-
-
-/*app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    //
-    res.send('playlist.ejs', {
-      user: req.session.user,
-    })
-    //res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.send('Sorry, no playlist added.');
-  }
-});*/
 
 app.use(passUserToView);
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/', usersController);
 app.use('/users/:userId/animes',animesController);
-
-
-//app.use('/users', usersController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

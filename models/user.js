@@ -19,8 +19,6 @@ type: String,
   }
 })
 
-
-
 const userSchema = mongoose.Schema({
   username: {
     type: String,

@@ -35,12 +35,6 @@ h1 {
 
 }
 
-/*style my h1*/
-
-
-
-/**/
-
 
 .wrapper {
     width: 100%;
@@ -108,7 +102,7 @@ h1 {
     transition: all .3s easy;
 }
 
-/* here btn for button look if u can fix this*/
+
 .links {
     display: flex;
     justify-content: space-between;

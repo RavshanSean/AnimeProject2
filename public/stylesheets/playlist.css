@@ -59,8 +59,6 @@ body {
  
 }
 
-
-
 .links  {
     position: absolute;
     bottom: 0;
@@ -78,15 +76,13 @@ body {
     z-index: 3;
 }
 
-
-
   .banner .content .model {
-    background-image: url(/stylesheets/filee.png);
+    background-image: url(/stylesheets/fileee.png);
     width: 100%;
     height: 75vh;
-    top: 30%;
+    top: 20%;
     position: absolute;
-    background-size: auto 90%;
+    background-size: auto 80%;
     background-repeat: no-repeat;
     background-position: top center;
     z-index: 1;

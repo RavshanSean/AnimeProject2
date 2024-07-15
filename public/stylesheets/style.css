@@ -69,7 +69,6 @@ transform: translateY(100vh) scale(0);
     transform: translateY(-10vh) scale(1);
 }}
 
-/* new add wraper to look better */
 
 .wrapper {
     display: flex;
@@ -143,8 +142,6 @@ transform: translateY(100vh) scale(0);
     filter: blur(8px);
 }
 
-/*sign in*/
-
 .links {
     display: flex;
     justify-content: space-between;
@@ -156,6 +153,15 @@ transform: translateY(100vh) scale(0);
     color: #8f8f8f;
     text-decoration: none;
     margin-top: 15px;
+}
+
+
+h1 {
+    text-shadow: 0 0 10px rgba(17, 134, 172),
+    0 0 20px rgba(17, 134, 172),
+    0 0 40px rgba(17, 134, 172),
+    0 0 80px rgba(17, 134, 172),
+    0 0 160px rgba(17, 134, 172);
 }
 
 
