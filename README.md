@@ -1,6 +1,9 @@
 # Anie-Tracker
 ![AnimeWEb](https://i.imgur.com/7i33DB4.png)
 
+## Link to my app
+- https://anime-tracker-b277e48a0af0.herokuapp.com/home
+
 ## Technologies Used
 - ejs 
 - css 
